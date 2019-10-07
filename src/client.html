@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <title>Mini internet store: Client page</title>
+  </head>
+
+  <body>
+    <header class="page-header">
+      <nav class="nav-bar  container">
+        <ul class="admin-nav">
+          <li class="admin-nav-item">
+            <a class="admin-nav-link " href="\">Admin</a>
+          </li>
+        </ul>
+        <ul class="client-menu">
+          <li class="client-menu-item">
+            <a class="client-menu-link current-page-link" href="client.html">Client</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="inner-main  page-main">
+      <div id="shoping" class="shop-container  container">
+        <section class="item-container">
+          <section class="item-container-action">
+            <button id="show-cart">Show cart</button>
+          </section>
+          <h2>Список товаров:</h2>
+          <ul class="goods-list client"></ul>
+          <section id="wait-loading" class="wait-loading">
+            <img id="wait-loading" src="./img/waitloading.gif" />
+          </section>
+        </section>
+      </div>
+      <div id="cart" class="shop-container  container visually-hidden">
+        <section class="item-container">
+          <section class="item-container-action">
+            <button id="show-goods">Continue Shopping</button>
+            <button id="clear-cart">Clear cart</button>
+            <p id="totalAmount"></p>
+            <button id="pay-cart">Order</button>
+          </section>
+          <h2>Моя корзина :</h2>
+          <ul class="cart-list client"></ul>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

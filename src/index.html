@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Mini internet store</title>
+    <link type="application/javascript" href="js/admin.js">
+</head>
+<body>
+    <header class="page-header">
+        <nav class="nav-bar  container">
+            <ul class="admin-nav">
+                <li class="admin-nav-item">
+                    <a class="admin-nav-link  current-page-link" href="\">Admin</a>
+                </li>
+            </ul>
+            <ul class="client-menu">
+                <li class="client-menu-item">
+                    <a class="client-menu-link" href="client.html">Client</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="inner-main page-main">
+        <div class="shop-container container">
+            <section class="filter-container">
+                <h1 class="main-title">Welcome Admin!</h1>
+                <form class="goods-filter" autocomplete="off">
+                    <h2 class="visually-hidden">Filter by price</h2>
+                    <fieldset class="goods-filter-group">
+                        <legend class="inner-content-title">Price range:</legend>
+                        <label class="checkbox-field">
+                            <input class="visually-hidden" type="checkbox" name="price-low">
+                            <span class="custom-checkbox"></span>
+                            0&nbsp;-&nbsp;10&nbsp;$
+                        </label>
+                        <label class="checkbox-field">
+                            <input class="visually-hidden" type="checkbox" name="price-medium">
+                            <span class="custom-checkbox"></span>
+                            10&nbsp;-&nbsp;50&nbsp;$
+                        </label>
+                        <label class="checkbox-field">
+                            <input class="visually-hidden" type="checkbox" name="price-high">
+                            <span class="custom-checkbox"></span>
+                            Over &nbsp;50&nbsp;$
+                        </label>
+                    </fieldset>
+                    <fieldset class="goods-filter-group">
+                        <legend class="inner-content-title">Available:</legend>
+                        <label class="radiobtn-field">
+                            <input class="visually-hidden" type="radio" name="avialble-type" value="avialable-only">
+                            <span class="custom-radiobtn"></span>
+                            Only available
+                        </label>
+                        <label class="radiobtn-field">
+                            <input class="visually-hidden" checked type="radio" name="avialble-type"
+                                value="avialable-all">
+                            <span class="custom-radiobtn"></span>
+                            All
+                        </label>
+                    </fieldset>
+                </form>
+            </section>
+            <section class="item-container">
+                <section class="item-container-action">
+                    <button id="create-item">Create item</button>
+                </section>
+                <h2>Список товаров:</h2>
+                
+                <ul class="goods-list">
+                </ul>
+                <section id="wait-loading" class="wait-loading">
+                    <img id="wait-loading" src="./img/waitloading.gif" >
+                </section>
+            </section>
+        </div>
+    </main>
+    <!--Modal window-->
+    <!-- Modal Create new item-->
+    <section class="modal modal-create">
+        <h2>Создать товар</h2>
+        <p class="modal-description">Введите пожалуйста поля</p>
+        <form id="create-form" class="create-form" autocomplete="off">
+            <p>
+                <label class="visually-hidden" for="goods-name">Назавание товара</label>
+                <input class="create-input-text" id="goods-name" type="text" name="name" placeholder="Название">
+            </p>
+            <p>
+                <label class="visually-hidden" for="goods-description">Описание товара</label>
+                <input class="create-input-text" id="goods-description" type="text" name="description" placeholder="Описание">
+            </p>
+            <p>
+                <label class="visually-hidden" for="goods-cost">Цена товара</label>
+                <input class="create-input-text" id="goods-cost" type="text" name="cost" placeholder="цена">
+            </p>
+            <p class="create-help">
+                <label class="create-checkbox">
+                    <input id="create-avialable" type="checkbox" name="available" class="visually-hidden">
+                    <span class="checkbox-indicator"></span>Наличие
+                </label>
+                <p class="form-notice visually-hidden"></p>
+            </p>
+            <button class="button" type="submit">Создать</button>
+            <h5>Пустые поля гененируют случайные данные</h5>
+        </form>
+        <button class="modal-close" type="button">Закрыть</button>
+    </section>
+    <div class="visually-hidden modal-overlay"></div>
+    <!--Modal Edit item-->
+    <section class="modal modal-edit">
+        <h2>Изменить товар</h2>
+        <p class="modal-description">Измените пожалуйста поля для товара</p>
+        <form class="edit-form" autocomplete="off">
+            <a href="#"><img id="edit-img" class="goods_miniature"></a>
+            <p class="visually-hidden">
+                <label class="visually-hidden" for="goods-id">ID товара</label>
+                <input class="edit-input-text" id="goods-id" type="text" name="id" placeholder="Id товара">
+            </p>
+            <p>
+                <label class="visually-hidden" for="goods-name">Назавание товара</label>
+                <input class="edit-input-text" id="goods-name" type="text" name="name" placeholder="Название">
+            </p>
+            <p>
+                <label class="visually-hidden" for="goods-description">Описание товара</label>
+                <input class="edit-input-text" id="goods-description" type="text" name="description"
+                    placeholder="Описание">
+            </p>
+            <p>
+                <label class="visually-hidden" for="goods-cost">Цена товара</label>
+                <input class="edit-input-text" id="goods-cost" type="text" name="cost" placeholder="цена">
+            </p>
+            <p class="edit-help">
+                <label class="edit-checkbox">
+                    <input id="edit-avialable" type="checkbox" name="available" class="visually-hidden">
+                    <span class="checkbox-indicator"></span>Наличие
+                </label>
+                <p class="form-notice visually-hidden"></p>
+            </p>
+            <button class="button" type="submit">Изменить</button>
+            <h5>Пустые поля гененируют случайные данные</h5>
+        </form>
+        <button class="modal-close" type="button">Закрыть</button>
+    </section>
+
+
+
+</body>
+
+</html>

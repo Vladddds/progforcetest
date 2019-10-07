@@ -1,0 +1,12 @@
+// http://5bdd3e7433f2d100131fc462.mockapi.io/v1/api/goods
+[
+    {   "id":"42",
+        "name":"Awesome Concrete Hat 22222222",
+        "img":"http://lorempixel.com/640/480/cats",
+        "cost":"25","description":"definition 22222",
+        "available":"true",
+        "forsale":"false"
+    },
+    {
+        
+    }]
